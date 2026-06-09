@@ -13,6 +13,31 @@ A comprehensive paper reading toolkit for producing **source-aware**, **claim-an
 
 ---
 
+## Output Location
+
+All paper deep-read artifacts are saved to the knowledge base:
+
+```
+📂 /home/node/.openclaw/workspace/papers/
+└── {paper-name}-{paper-id}/
+    ├── report.md          ← 主解读报告
+    ├── traceability_manifest.json
+    ├── latex_paragraphs.json
+    ├── artifact_index.json
+    ├── research_lens.json
+    ├── direction_board.json
+    └── references/         ← 引用论文原文（如有）
+```
+
+**Naming Convention:**
+- `paper-name`: 论文名，全小写、空格变连字符（如 `adacom`, `activegraph`）
+- `paper-id`: 论文唯一标识，arXiv ID 等（如 `2605.30785`）
+- 示例: `adacom-2605.30785`, `activegraph-2605.21997`, `llm-sleep-2605.26099`
+
+> `memory/` 和 `image/` 不属于知识库，不要写入 paper 目录。
+
+---
+
 ## Output Artifacts
 
 When you run a deep read, you get:
@@ -99,6 +124,7 @@ User: "Deep-read this paper."
   → 8. Run render_inline_trace_report.py to embed anchors
   → 9. Validate artifacts (validate_*.py)
   → 10. Write final polished read using river or story template
+  → 11. Save all artifacts to papers/{paper-name}-{paper-id}/ directory
 ```
 
 ### Claim ID Convention
